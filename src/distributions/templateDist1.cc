@@ -15,15 +15,15 @@ using std::max;             // max is used in code
 namespace jags {
 namespace example { // module namespace
 
-    scalarDist::scalarDist() : ScalarDist("templateDist", 1, DIST_PROPORTION)
+    templateDist1::templateDist1() : ScalarDist("dist1", 1, DIST_PROPORTION)
     {}
 
-    bool scalarDist::checkParameterValue (vector<double const *> const & parameters) const
+    bool templateDist1::checkParameterValue (vector<double const *> const & parameters) const
     {
         return (PROB(parameters) >= 0.0 && PROB(parameters) <= 1.0);
     }
 
-    double scalarDist::logDensity(double x, PDFType type,
+    double templateDist1::logDensity(double x, PDFType type,
                                   vector<double const *> const &parameters,
                                   double const *lbound, double const *ubound) const
     {
@@ -31,20 +31,20 @@ namespace example { // module namespace
         return(d == 0) ? JAGS_NEGINF : log(d);
     }
 
-    double scalarDist::randomSample(vector<double const *> const &parameters,
+    double templateDist1::randomSample(vector<double const *> const &parameters,
                                     double const *lbound, double const *ubound,
                                     RNG *rng) const
     {
         return (rng->uniform() < PROB(parameters)) ? 1 : 0;
     }
 
-    double scalarDist::typicalValue(vector<double const *> const &parameters,
+    double templateDist1::typicalValue(vector<double const *> const &parameters,
                                     double const *lbound, double const *ubound) const
     {
         return (PROB(parameters) > 0.5) ? 1 : 0;
     }
 
-    bool scalarDist::isDiscreteValued(vector<bool> const &mask) const
+    bool templateDist1::isDiscreteValued(vector<bool> const &mask) const
     {
         return true;
     }
