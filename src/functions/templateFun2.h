@@ -1,5 +1,5 @@
-#ifndef FUN1_FUNC_H_
-#define FUN1_FUNC_H_
+#ifndef FUN2_FUNC_H_
+#define FUN2_FUNC_H_
 
 #include <function/ScalarVectorFunction.h>
 
@@ -21,4 +21,4 @@ namespace example {
 
 }}
 
-#endif /* FUN1_FUNC_H_ */
+#endif /* FUN2_FUNC_H_ */

@@ -1,6 +1,6 @@
 #ifndef DBERN_H_ // check whether DBERN_H_ is already defined
 #define DBERN_H_
-#include <distribution/templateDist1.h> // JAGS scalar distribution base class
+#include <distribution/ScalarDist.h> // JAGS scalar distribution base class
 
 namespace jags {
 namespace example {
